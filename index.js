@@ -6,13 +6,13 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-app.get('/iot/status=ac', (req, res) => {
+app.get('/iot/ac', (req, res) => {
   // 'ac' komutunu göndermek için Socket.IO kullanılır
   io.emit('ac', 'Açıldı');
   res.send('Açma komutu gönderildi.');
 });
 
-app.get('/iot/status=kapat', (req, res) => {
+app.get('/iot/kapat', (req, res) => {
     // 'ac' komutunu göndermek için Socket.IO kullanılır
     io.emit('kapat', 'Kapandı');
     res.send('Kapanma komutu gönderildi.');
