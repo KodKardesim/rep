@@ -11,6 +11,9 @@ app.get('/iot/ac', (req, res) => {
   io.emit('ac', 'Açıldı');
   res.send('Açma komutu gönderildi.');
 });
+app.get('/', (req, res) => {
+    res.send('Açıldı.');
+  });
 
 app.get('/iot/kapat', (req, res) => {
     // 'ac' komutunu göndermek için Socket.IO kullanılır
